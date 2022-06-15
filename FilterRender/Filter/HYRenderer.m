@@ -249,18 +249,18 @@ typedef NS_ENUM(NSInteger,HYRendererGreenScreenType){
     CGSize textureSize = CGSizeMake(CVPixelBufferGetWidth(pixelBuffer),
                                     CVPixelBufferGetHeight(pixelBuffer));
     CVOpenGLESTextureRef texture = nil;
-    CVReturn status = CVOpenGLESTextureCacheCreateTextureFromImage(nil,
-                                                                   [[GPUImageContext sharedImageProcessingContext] coreVideoTextureCache],
-                                                                   pixelBuffer,
-                                                                   nil,
-                                                                   GL_TEXTURE_2D,
-                                                                   GL_RGBA,
-                                                                   textureSize.width,
-                                                                   textureSize.height,
-                                                                   GL_BGRA,
-                                                                   GL_UNSIGNED_BYTE,
-                                                                   0,
-                                                                   &texture);
+	CVReturn status = CVOpenGLESTextureCacheCreateTextureFromImage(nil,
+																   [[GPUImageContext sharedImageProcessingContext] coreVideoTextureCache],
+																   pixelBuffer,
+																   nil,
+																   GL_TEXTURE_2D,
+																   GL_RGBA,
+																   textureSize.width,
+																   textureSize.height,
+																   GL_BGRA,
+																   GL_UNSIGNED_BYTE,
+																   0,
+																   &texture);
     
     if (status != kCVReturnSuccess) {
         NSLog(@"Can't create texture");
